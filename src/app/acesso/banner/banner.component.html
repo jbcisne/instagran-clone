@@ -1,1 +1,6 @@
-<div class="banner-background"></div>
+<button (click)='toggleEstado()'>Teste</button>
+<div class="banner-background">
+    <!-- [@banner]="estado" conecta o elemento à trigger de animação banner atravez da propriedade estado na classe do template-->
+    <img src="/assets/banner-acesso/img_1.png" [@banner]="estado"/>
+
+</div>
