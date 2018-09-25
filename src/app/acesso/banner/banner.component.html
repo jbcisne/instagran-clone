@@ -1,6 +1,8 @@
-<button (click)='toggleEstado()'>Teste</button>
 <div class="banner-background">
     <!-- [@banner]="estado" conecta o elemento à trigger de animação banner atravez da propriedade estado na classe do template-->
-    <img src="/assets/banner-acesso/img_1.png" [@banner]="estado"/>
+    <img 
+        *ngFor="let imagem of imagens" 
+        [src]="imagem.url" 
+        [@banner]="imagem.estado"/>
 
 </div>
