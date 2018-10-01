@@ -24,9 +24,9 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
       transition('void => criado', [
         style({opacity: 0, transform: 'translate(80px, 0)'}),
         animate('1.5s 0s ease-in-out', keyframes([
+          //offset é o percentual em relação ao animate 
           style({offset: 0.15, opacity: 1, transform: 'translateX(0)'}),
           style({offset: 0.86, opacity: 1, transform: 'translateX(0)'}),
-
           style({offset: 0.88, opacity: 1, transform: 'translateY(-10px)'}),
           style({offset: 0.90, opacity: 1, transform: 'translateY(10px)'}),
           style({offset: 0.92, opacity: 1, transform: 'translateY(-10px)'}),
@@ -54,6 +54,14 @@ export class AcessoComponent implements OnInit {
   public exibirPainel(event: string) {
     console.log('evento: ', event)
     this.cadastro = (event === 'cadastro') ? true : false
+  }
+
+  public inicioDaAnimacao(): void {
+    console.log('inicio da animação');
+  }
+
+  public fimDaAnimacao(): void {
+    console.log('fim da animação');
   }
 
 }
