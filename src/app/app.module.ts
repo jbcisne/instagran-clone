@@ -15,6 +15,7 @@ import { CadastroComponent } from './acesso/cadastro/cadastro.component';
 import { PublicacoesComponent } from './home/publicacoes/publicacoes.component';
 
 import { ROUTES } from './app.routes';
+import { IncluirPublicacaoComponent } from './home/incluir-publicacao/incluir-publicacao.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ROUTES } from './app.routes';
     LoginComponent,
     CadastroComponent,
     HomeComponent,
-    PublicacoesComponent
+    PublicacoesComponent,
+    IncluirPublicacaoComponent
   ],
   imports: [
     BrowserModule,
