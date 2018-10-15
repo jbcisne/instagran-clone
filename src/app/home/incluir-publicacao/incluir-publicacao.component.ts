@@ -20,6 +20,8 @@ export class IncluirPublicacaoComponent implements OnInit {
   })
 
   public email: string
+  public progressoPublicacao: string = 'pendente'
+  public porcentagemUpload: number = 0
 
   private imagem: any
 
@@ -47,9 +49,14 @@ export class IncluirPublicacaoComponent implements OnInit {
     continua.next(true)
 
     acompanhamentoUpload.pipe(takeUntil(continua)).subscribe(() => {
-      console.log('status: ', this.progresso.status)
-      console.log('estado: ', this.progresso.estado)
+      this.progressoPublicacao = 'andamento'
+      
+      if (this.progresso.status === 'em_andamento') {
+        this.porcentagemUpload = Math.round((this.progresso.estado.bytesTransferred / this.progresso.estado.totalBytes) * 100) 
+      }
+
       if (this.progresso.status === 'concluido') {
+        this.progressoPublicacao = 'concluido'
         continua.next(false)
       }
     })
