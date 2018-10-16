@@ -42,9 +42,7 @@ export class Bd {
     }
 
     public consultarPublicacoes(email: string): any {
-        
         //consulta as publicações
-        return
         firebase.database().ref(`publicacoes/${btoa(email)}`)
           .once('value')
           .then((snapshot: any) => {
@@ -73,7 +71,7 @@ export class Bd {
                         })
                   })
             });
-            return publicacoes
+            console.log(publicacoes)
           })
       }
 }
