@@ -27,7 +27,7 @@ export class Autenticacao {
 
                 //Obs.: btoa => encoda para base64
                 //      atob => decoda da base64
-                firebase.database().ref(`usuario_detalhe/(${btoa(usuario.email)}`)
+                firebase.database().ref(`usuario_detalhe/${btoa(usuario.email)}`)
                     .set(usuario)
             })
             .catch((error: Error) => {
