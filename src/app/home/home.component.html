@@ -10,6 +10,11 @@
 
 <br /><br /><br />
 <div class="container">
-  <app-publicacoes></app-publicacoes>
-  <app-incluir-publicacao></app-incluir-publicacao>
+  <!-- #publicacoes é uma variavel de template que será usada para definir a 
+    instancia do componente (publicacoes) dentro do componente (home) -->
+  <app-publicacoes #publicacoes></app-publicacoes>
+
+  <!-- externaliza o atributo do componente (incluir-publicacao) e chama 
+    o metoto atualizarTimeLina do component (home) -->
+  <app-incluir-publicacao (atualizarTimeLine)="atualizarTimeLine()"></app-incluir-publicacao>
 </div>

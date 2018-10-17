@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Autenticacao } from '../autenticacao.service';
 
 @Component({
@@ -8,6 +8,14 @@ import { Autenticacao } from '../autenticacao.service';
 })
 export class HomeComponent implements OnInit {
 
+  /*
+    @ViewChild('publicacoes') => faz referencia a variável de template #publicacoes definida
+     no template do componente (home)
+
+     isso dá acesso a Instância do componente (publicacoes)
+   */
+  @ViewChild('publicacoes') public publicacoes: any
+
   constructor(private autenticacao: Autenticacao) { }
 
   ngOnInit() {
@@ -16,4 +24,11 @@ export class HomeComponent implements OnInit {
   public sair(): void {
     this.autenticacao.sair()
   }
+
+  public atualizarTimeLine(): void {
+    //chama o metodo atualizarTimeLine() do componente (publicacoes)
+    this.publicacoes.atualizarTimeLine()
+  }
+
+
 }

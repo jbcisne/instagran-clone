@@ -10,6 +10,7 @@ import { Bd } from '../../bd.service';
 export class PublicacoesComponent implements OnInit {
 
   private email: string
+  public publicacoes: any
 
   constructor(
     private bd: Bd
@@ -25,6 +26,9 @@ export class PublicacoesComponent implements OnInit {
 
   public atualizarTimeLine(): void {
     this.bd.consultarPublicacoes(this.email)
+    .then((publicacoes: any) => {
+      this.publicacoes = publicacoes
+    })
     
   }
 }
